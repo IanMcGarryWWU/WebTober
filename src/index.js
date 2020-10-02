@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import FishTank from './FishTank';
+// import FishTank from './FishTank';
+import Smoke from './Smoke'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <FishTank />
+    <Smoke />
   </React.StrictMode>,
   document.getElementById('root')
 );
