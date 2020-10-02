@@ -2,7 +2,7 @@
   "name": "webtober",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ianmcgarrywwu.github.io/WebTober/",
+  "homepage": "https://ianmcgarrywwu.github.io/WebTober",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -15,8 +15,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts docs && rd /s /q docs",
-    "postbuild": "rename docs docs",
+    "build": "react-scripts build && rd /s /q docs",
+    "postbuild": "rename build docs",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
