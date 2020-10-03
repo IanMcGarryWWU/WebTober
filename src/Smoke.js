@@ -48,7 +48,13 @@ const Smoke = () => {
             const ctx = canvas.getContext('2d')
 
             const countarray = Array.from({length: 25}, (_, index) => index + 1);
-            countarray.map(() => {particles.push({x: position.x, y: position.y, vx: 0, vy: randbetween(3, 7) * -1})})
+            let positionx = width /2
+            let positiony = height - 20
+            if (position.x) {
+                positionx = position.x
+                positiony = position.y
+            }
+            countarray.map(() => {particles.push({x: positionx, y: positiony, vx: 0, vy: randbetween(3, 7) * -1})})
             particles.filter(particle => particle.height > 0 && particle.vy < -0.1)
             if (randbetween(0, 1) < 0.07) {
                 let direction = 1
