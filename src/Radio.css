@@ -1,0 +1,30 @@
+.Centerer {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.RadioContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.RadioButton {
+    z-index: 1000;
+    background-color: Black;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 32px;
+}
+
+.AnItem {
+    background-color: darkgrey;
+    x-index: -1;
+}
+
+.TopHalf {
+    height: 75vh;
+}

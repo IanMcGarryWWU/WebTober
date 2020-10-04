@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import FishTank from './FishTank';
 // import Smoke from './Smoke'
-// import Radio from './Radio'
-import Bulky from './Bulky'
+import Radio from './Radio'
+// import Bulky from './Bulky'
 
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Bulky />
+    <Radio />
   </React.StrictMode>,
   document.getElementById('root')
 );
