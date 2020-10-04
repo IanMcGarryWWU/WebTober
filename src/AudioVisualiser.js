@@ -19,11 +19,10 @@ class AudioVisualiser extends Component {
         const width = canvas.width;
         const context = canvas.getContext('2d');
 
-        context.lineWidth = 2;
         // context.strokeStyle = '#878fc9';
-        context.strokeStyle = '#FFFFFF';
+        // context.strokeStyle = '#FFFFFF';
         context.lineWidth = 1;
-        context.fillStyle = "RGBA(53, 61, 117, 0.5)";
+        context.fillStyle = "RGBA(53, 61, 117, 0.178)";
         context.fillRect(0, 0, width, height);
         context.beginPath();
 
@@ -46,30 +45,24 @@ class AudioVisualiser extends Component {
             return y
         }
 
-        function shuffle(a) {
-            let j, x, i;
-            for (i = a.length - 1; i > 0; i--) {
-                j = Math.floor(Math.random() * (i + 1));
-                x = a[i];
-                a[i] = a[j];
-                a[j] = x;
-            }
-            return a;
-        }
-
         returnToBase()
 
         // let tempaudiodata = shuffle(audioData)
 
         audioData.map((item, index) => {
+            let brightness = Math.floor(((index * 255) / 22))
+            context.strokeStyle = "RGBA(" + brightness + ", 255, 255, 1)";
             const modifier = (2 ** (index / 20)) / 2
             let y = (((item * modifier) / 255.0) * 300)
             y = scaleY(1.2, y)
             y *= 1.2
             y = Math.max(0, y)
             y = Math.min(300, y)
+            let biggestdimension = Math.max(height, width)
+            y *= biggestdimension / 300
             returnToBase()
             let angle = getAngle(index)
+            angle += randbetween(0, 1) - 0.5
             let numsegments = Math.floor(y / 30)
             let segmentlength = y / numsegments
             let i
@@ -88,7 +81,7 @@ class AudioVisualiser extends Component {
         context.stroke();
     }
     render() {
-        return <canvas width="350" height="600" ref={this.canvas} />;
+        return <canvas width={this.props.width} height={this.props.height} ref={this.canvas} />;
     }
 }
 

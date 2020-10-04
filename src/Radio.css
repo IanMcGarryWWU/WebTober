@@ -1,11 +1,14 @@
 .Centerer {
     height: 100vh;
+    width: 100vw;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
 .RadioContainer {
+    position: absolute;
+    margin: 50px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -25,6 +28,6 @@
     x-index: -1;
 }
 
-.TopHalf {
-    height: 75vh;
+.Visualiser {
+    position: absolute;
 }

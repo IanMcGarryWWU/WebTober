@@ -2,16 +2,17 @@ import React, {useEffect, useState, useRef} from "react";
 import './Radio.css';
 import useAnimationFrame from './useAnimationFrame'
 import AudioVisualiser from './AudioVisualiser';
+import useDimensions from "react-cool-dimensions";
 
 
 const Radio = () => {
-    const ref = useRef()
     const audioref = useRef()
-    const [currentState, setCurrentState] = useState('Closed')
     const [count, setCount] = useState(0)
     const context = useRef()
     const analyser = useRef()
     const dataArray = useRef()
+    const { ref, width, height} = useDimensions();
+    const [clicked, setClicked] = useState(false);
 
     useEffect(() => {
         context.current = new AudioContext();
@@ -31,10 +32,15 @@ const Radio = () => {
     })
 
     const clicktochoose = () => {
+        setClicked(true)
         let audioelement = audioref.current
         audioelement.play()
         context.current.resume()
     }
+
+    useEffect(() => {
+        console.log(height)
+    }, [height])
 
     useEffect(() => {
       if (context.current) {
@@ -42,16 +48,17 @@ const Radio = () => {
       }
     }, [count])
 
-    return <div className={"Centerer"}>
-        <div className={"TopHalf"}>
+    return <div ref={ref} className={"Centerer"}>
+        <div className={"RadioContainer"}>
             {
-                dataArray.current && <AudioVisualiser audioData={dataArray.current} />
+                !clicked && <div onClick={clicktochoose} className={"RadioButton"}> PLAY </div>
+            }
+        </div>
+
+            {
+                dataArray.current && height > 0 && <AudioVisualiser className={"Visualiser"} audioData={dataArray.current} height={height} width={width}/>
             }
             <audio ref={audioref} src="https://s1.citrus3.com:8236/stream" crossOrigin="anonymous"/>
-        </div>
-        <div className={"RadioContainer"}>
-            <div ref={ref} onClick={clicktochoose} className={"RadioButton"}> PLAY </div>
-        </div>
     </div>
 };
 
