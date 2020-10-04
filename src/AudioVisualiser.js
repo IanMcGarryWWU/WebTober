@@ -58,8 +58,8 @@ class AudioVisualiser extends Component {
             y *= 1.2
             y = Math.max(0, y)
             y = Math.min(300, y)
-            let biggestdimension = Math.max(height, width)
-            y *= biggestdimension / 300
+            let smallestdimension = Math.min(height, width)
+            y *= smallestdimension / 300
             returnToBase()
             let angle = getAngle(index)
             angle += randbetween(0, 1) - 0.5
