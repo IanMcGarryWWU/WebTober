@@ -1,16 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import FishTank from './FishTank';
-// import Smoke from './Smoke'
-import Radio from './Radio'
-// import Bulky from './Bulky'
+import MainMenu from './MainMenu'
+
 
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Radio />
+    <MainMenu />
   </React.StrictMode>,
   document.getElementById('root')
 );
