@@ -6,6 +6,7 @@ import FishTank from './FishTank'
 import Smoke from './Smoke'
 import useDimensions from "react-cool-dimensions";
 import Fish from "./Fish";
+import Blade from "./Blade";
 
 
 const MainMenu = () => {
@@ -54,6 +55,12 @@ const MainMenu = () => {
             index: 7,
             daynum: 4,
             prompt: "Radio",
+            opacity: "100%"
+        },
+        {
+            index: 8,
+            daynum: 5,
+            prompt: "Blade",
             opacity: "100%"
         }
     ]
@@ -112,6 +119,10 @@ const MainMenu = () => {
                     </>}
         {currentPage === "Radio" && <>
             <Radio />
+
+        </>}
+        {currentPage === "Blade" && <>
+            <Blade />
 
         </>}
         </>

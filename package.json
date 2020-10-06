@@ -10,7 +10,8 @@
     "react-cool-dimensions": "^1.1.8",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
-    "react-spring": "^8.0.27"
+    "react-spring": "^8.0.27",
+    "three": "^0.121.1"
   },
   "scripts": {
     "start": "react-scripts start",
