@@ -1,13 +1,7 @@
 import React, {useEffect, useState, useRef} from "react";
 import './MainMenu.css';
 import Radio from './Radio'
-import Bulky from './Bulky'
-import FishTank from './FishTank'
-import Rodent from './Rodent'
-import Smoke from './Smoke'
 import useDimensions from "react-cool-dimensions";
-import Fish from "./Fish";
-import Blade from "./Blade";
 
 
 const MainMenu = () => {
@@ -91,45 +85,8 @@ const MainMenu = () => {
 
 
     return <>
-    {currentPage === "Menu" && <div ref={ref} className='menuContainer'>
-        { innerDimensions.width !== 0  && <div style={{width: innerDimensions.width, height: "100%"}} className={"InnerMenu"}>
-                <div className={"MenuHeader"} style={{width: "100%", height: (height - innerDimensions.height) / 2}}>
-                    <div className={"HeaderText"}> A web page for each one of the Inktober prompts - so WebTober </div>
-                </div>
-                <div className={"InnerInnerMenu"} style={{width: innerDimensions.width - 20, height: innerDimensions.height -20}}>
-                    {days.map((aday) => {
-                        return <div className={"DateCardOuter"} key={aday.index} style={{opacity: aday.opacity}} onClick={() => setCurrentPage(aday.prompt)}>
-                            <div className={"DateCardInner"}>
-                                <div className={"DateCardInnerInner"}>
-                                    <div className={"DateItem"}> {aday.daynum} </div>
-                                </div>
-                                <div className={"DateCardInnerInner"}>
-                                    <div className={"PromptItem"}> {aday.prompt} </div>
-                                </div>
-                            </div>
-                        </div>
-                    })}
-                </div>
-            </div>
-        }
-        </div> }
-        {currentPage === "Fish" && <>
-            <FishTank />
-
-            </>}
-        {currentPage === "Wisp" && <>
-            <Smoke />
-
-        </>}
-        {currentPage === "Bulky" && <>
-            <Bulky />
-                    </>}
         {currentPage === "Radio" && <>
             <Radio />
-
-        </>}
-        {currentPage === "Blade" && <>
-            <Blade />
 
         </>}
         </>
