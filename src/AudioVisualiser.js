@@ -22,7 +22,7 @@ class AudioVisualiser extends Component {
         // context.strokeStyle = '#878fc9';
         // context.strokeStyle = '#FFFFFF';
         context.lineWidth = 1;
-        context.fillStyle = "RGBA(53, 61, 117, 0.178)";
+        context.fillStyle = "RGBA(0, 0, 0, 1)";
         context.fillRect(0, 0, width, height);
         context.beginPath();
 
@@ -62,7 +62,7 @@ class AudioVisualiser extends Component {
             y *= smallestdimension / 300
             returnToBase()
             let angle = getAngle(index)
-            angle += randbetween(0, 1) - 0.5
+            angle += (randbetween(0, 1) - 0.5) * 0.2
             let numsegments = Math.floor(y / 30)
             let segmentlength = y / numsegments
             let i
