@@ -27,7 +27,7 @@ class AudioVisualiser extends Component {
         context.beginPath();
 
         const getAngle = (index) => {
-            return ((index + 1)/ 22) * Math.PI * 2
+            return ((index + 11)/ 22) * Math.PI * 2
         }
 
         const randbetween = (miny, maxy) => {
@@ -53,7 +53,7 @@ class AudioVisualiser extends Component {
             let brightness = Math.floor(((index * 255) / 22))
             context.strokeStyle = "RGBA(" + brightness + ", 255, 255, 1)";
             const modifier = (2 ** (index / 20)) / 2
-            let y = (((item * modifier) / 255.0) * 300)
+            let y = ((((item * modifier) / 255.0) ** 2 ) * 300)
             y = scaleY(1.2, y)
             y *= 1.2
             y = Math.max(0, y)
