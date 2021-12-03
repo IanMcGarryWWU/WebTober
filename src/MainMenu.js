@@ -132,9 +132,6 @@ const MainMenu = () => {
             <Blade />
 
         </>}
-        {currentPage === "Rodent" && <>
-            <Rodent />
-        </>}
         </>
 };
 
