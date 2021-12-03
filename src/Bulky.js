@@ -64,7 +64,7 @@ const Bulky = () => {
     }, [count])
 
     return <div className={'bulky'}>
-        <div style={letterstyles[0]} className={'bulkyletter'}>B</div>
+        <div  className={'bulkyletter'}>B</div>
         <div style={letterstyles[1]} className={'bulkyletter'}>U</div>
         <div style={letterstyles[2]} className={'bulkyletter'}>L</div>
         <div style={letterstyles[3]} className={'bulkyletter'}>K</div>

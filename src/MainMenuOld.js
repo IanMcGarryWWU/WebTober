@@ -12,7 +12,7 @@ import Blade from "./Blade";
 
 const MainMenu = () => {
 
-    const [currentPage, setCurrentPage] = useState("Radio");
+    const [currentPage, setCurrentPage] = useState("Menu");
     const { ref, width, height} = useDimensions();
     const [innerDimensions, setInnerDimensions] = useState({width: 0, height: 0})
     const days = [
